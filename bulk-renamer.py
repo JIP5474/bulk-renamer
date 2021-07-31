@@ -20,16 +20,16 @@ def new(filename):
         else:           #else increase index
             index+=1
     #index is set to the position for grabbing month        
-    index=index+6
-    end=index+1
+    index=index+5
+    end=index+2
     month=int(filename[index:end:1])    #string slicing to get month
     month=month_list[month-1]    #comparing with the month list to get monthname
 
     #index is set for grabbing date
-    index=index+1
+    index=index+2
     end=index+2
     date=filename[index:end:1]      #string slicing to get date
-    new_n=subject+" "+month+date    #concatening all into new name
+    new_n=common+" "+month+date    #concatening all into new name
     return new_n
 
 
