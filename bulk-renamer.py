@@ -3,6 +3,12 @@ import os
 path=os.getcwd()        #saving path to the file
 file=os.listdir()       #listing directories
 
+# getting the common name in the file from user
+file_finder = input("Enter the common name in the file : ")
+
+#getting the format in which the file is stored from the user
+file_format = input("Enter the file format: ")
+
 #getting common name to be included from user
 common=input("Enter common name to be included:")  
 
@@ -35,8 +41,8 @@ def new(filename):
 
 #for loop for each filename
 for f in file:
-    if "Meeting Recording" in f:        #if matching file found
+    if file_finder in f:        #if matching file found
         oldname=path+'\\'+f             #oldname is set    
-        newname=path+'\\'+new(f)+".mp4" #newname is set with return value from function
+        newname=path+'\\'+new(f)+"."+file_format #newname is set with return value from function
         os.rename(oldname,newname)      #renaming the file
         
